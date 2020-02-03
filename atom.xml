@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyjhaha.github.io</id>
     <title>哈库呐玛塔塔📕</title>
-    <updated>2020-02-02T16:15:18.440Z</updated>
+    <updated>2020-02-03T06:12:02.194Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyjhaha.github.io"/>
     <link rel="self" href="https://lyjhaha.github.io/atom.xml"/>
@@ -16,7 +16,10 @@
         <link href="https://lyjhaha.github.io/post/la-la-la-la-la-la">
         </link>
         <updated>2020-02-02T16:13:49.000Z</updated>
-        <content type="html"><![CDATA[<p>啦啦啦啦啦啦啦啦</p>
+        <content type="html"><![CDATA[<h2 id="标题二">标题二</h2>
+<h3 id="小标题">小标题</h3>
+<h2 id="标题三">标题三</h2>
+<p>啦啦啦啦啦啦啦啦</p>
 ]]></content>
     </entry>
 </feed>
