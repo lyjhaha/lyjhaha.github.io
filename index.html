@@ -1,161 +1,247 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" >
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
 
 <title>哈库呐玛塔塔📕</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://lyjhaha.github.io/favicon.ico?v=1580740019205">
+<!-- mdui -->
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
+<script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="shortcut icon" href="https://lyjhaha.github.io/favicon.ico">
 <link rel="stylesheet" href="https://lyjhaha.github.io/styles/main.css">
 
 
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
+ 
+  <meta name="description" content="这是一个小博客">
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar">
+  <div id="app">
+    <div class="mdui-appbar mdui-color-indigo mdui-shadow-6 mdui-appbar-fixed mdui-appbar-scroll-hide mdui-appbar-inset mdui-headroom mdui-headroom-pinned-top">
+  <div class="mdui-toolbar">
+    <button class="mdui-btn mdui-btn-icon" onclick="toggleSidebar()" mdui-drawer="{target: '#drawer', swipe: true}">
+      <i class="mdui-icon material-icons">menu</i>
+    </button>
+    <span class="mdui-typo-title">哈库呐玛塔塔📕's Blog</span>
+    <div class="mdui-toolbar-spacer"></div>
+    <a href="https://lyjhaha.github.io/atom.xml" target="_blank" class="mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'RSS'}">
+      <i class="mdui-icon material-icons">rss_feed</i>
+    </a>
+  </div>
+</div>
 
-
-    <meta name="description" content="这是一个小博客">
-    
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://lyjhaha.github.io">
-        <img src="https://lyjhaha.github.io/images/avatar.png?v=1580740019205" class="site-logo">
-        <h1 class="site-title">哈库呐玛塔塔📕</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
+    <div class="mdui-drawer mdui-drawer-full-height mdui-shadow-3" id="drawer">
+  <div class="mdui-grid-tile">
+    <img class="banner">
+    <div class="mdui-container-fluid avatar mdui-valign">
+      <img src="https://lyjhaha.github.io/images/avatar.png" class="mdui-img-circle mdui-center">
+    </div>
+    <div class="mdui-grid-tile-actions">
+      <div class="mdui-grid-tile-text">
+        <div class="mdui-grid-tile-title">哈库呐玛塔塔📕</div>
+        <div class="mdui-grid-tile-subtitle">
+          <i class="mdui-icon material-icons">art_track</i>这是一个小博客
+        </div>
+      </div>
+      <div class="mdui-grid-tile-buttons">
+        <a href="mailto:" 
+          class="mdui-btn mdui-btn-icon" 
+          mdui-tooltip="{content: ''}"
+          rel="external nofollow noopener noreferrer"
+          target="_blank">
+          <i class="mdui-icon material-icons">email</i>
+        </a>
       </div>
     </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
+
+  
+
+  <div class="mdui-list" mdui-collapse="{accordion: true}">
+    <a href="/" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-indigo-600">home</i>
+      <div class="mdui-list-item-content">主页</div>
+    </a>
+    <div class="mdui-collapse-item mdui-collapse-item-close">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">archive</i>
+        <div class="mdui-list-item-content">
+          <a href="/archives">归档</a>
+        </div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
         
-      
+          <a href="/archives#2020" class="mdui-list-item mdui-ripple">
+            <div class="mdui-list-item-content">
+                2020
+            </div>
+            <div class="mdui-chip mdui-color-indigo-300">
+              <span class="mdui-chip-title">2</span>
+            </div>
+          </a>
         
-      
-        
-      
-        
-      
-        
-      
+      </ul>
     </div>
-    <div class="site-description">
-      这是一个小博客
+    <div class="mdui-collapse-item mdui-collapse-item-close">
+      <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+        <i class="mdui-list-item-icon mdui-icon material-icons">bookmark</i>
+        <div class="mdui-list-item-content">标签</div>
+        <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+      </div>
+      <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+        
+      </ul>
     </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://lyjhaha.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
+    <a href="/post/about" class="mdui-list-item mdui-ripple">
+      <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-indigo-600">person</i>
+      <div class="mdui-list-item-content">关于</div>
+    </a>
+    <div class="mdui-divider"></div>
   </div>
 </div>
 
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://lyjhaha.github.io/post/ce-shi-2">
-                  <h2 class="post-title"># 测试2</h2>
-                </a>
-                <div class="post-date">
-                  2020-02-03
-                </div>
-                <div class="post-abstract">
-                  <p>测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2</p>
 
-                </div>
-              </div>
-              
-            </article>
+    <div class="mdui-container mdui-m-t-5 mdui-typo">
+      <div class="mdui-row">
+        <div class="mdui-col-md-2"></div>
+        <div class="mdui-col-md-8">
           
-            <article class="post-item">
-              <div class="left">
-                <a href="https://lyjhaha.github.io/post/la-la-la-la-la-la">
-                  <h2 class="post-title">啦啦啦啦啦啦</h2>
-                </a>
-                <div class="post-date">
-                  2020-02-03
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
+            <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+  <a href="https://lyjhaha.github.io/post/ce-shi-2">
+    <div class="mdui-card-media">
+      
+        <img class="article-feature">
+       
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title"># 测试2</div>
+          <div class="mdui-card-primary-subtitle">
+            <i class="mdui-icon material-icons">date_range</i> 2020-02-03 
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+  <div class="mdui-card-content">
+    <div class="mdui-text-truncate mdui-float-left" style="width: 80%;">
+      测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2
 
-          <div class="pagination-container">
+    </div>
+    <a href="https://lyjhaha.github.io/post/ce-shi-2" class="mdui-float-right">阅读全文</a>
+  </div>
   
+</article>
+          
+            <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+  <a href="https://lyjhaha.github.io/post/la-la-la-la-la-la">
+    <div class="mdui-card-media">
+      
+        <img class="article-feature">
+       
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">啦啦啦啦啦啦</div>
+          <div class="mdui-card-primary-subtitle">
+            <i class="mdui-icon material-icons">date_range</i> 2020-02-03 
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+  <div class="mdui-card-content">
+    <div class="mdui-text-truncate mdui-float-left" style="width: 80%;">
+      
+    </div>
+    <a href="https://lyjhaha.github.io/post/la-la-la-la-la-la" class="mdui-float-right">阅读全文</a>
+  </div>
   
-</div>
-
+</article>
+          
         </div>
       </div>
     </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
+    <div style="height: 100px;"></div> 
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
+<!-- NProgress -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+<script>
+  NProgress.start()
+  NProgress.inc(0.6)
+</script>
+
+<script type="application/javascript">
 AOS.init();
 
 var app = new Vue({
   el: '#app',
   data: {
     menuVisible: false,
-  },
+  }
 })
+</script>
 
+<!-- 一些方法 -->
+<script>
+  // 控制sidebar
+  let inst = new mdui.Drawer('#sidebar')
+  function toggleSidebar() {
+    inst.toggle()
+  }
+  
+  // 返回上一页
+  function goBack() {
+    if (window.history.length > 0) {
+      window.history.back()
+    } else {  // 若无则返回到主页
+      window.location = '/'
+    }
+  }
+
+  // 控制文章目录状态
+  function control_toc() {
+    if (document.querySelector('.post-toc') !== null) {
+      let toc_links = document.querySelector('.post-toc').querySelectorAll('a')
+      toc_links.forEach(ele => {
+        let toc_ele = document.getElementById(decodeURI(ele.href.match(/%.*/g)[0]))
+        let toc_ele_scrollTop = toc_ele.getBoundingClientRect().top
+        if (toc_ele_scrollTop <= 20) {
+          // 清除其它标题的激活状态
+          toc_links.forEach(item => { item.classList.remove('toc-actived') })
+          ele.classList.add('toc-actived')
+        }
+      })
+    }
+  }
+  window.onscroll = () => {
+    control_toc()
+  }
+  window.onload = () => {
+    control_toc()
+    NProgress.done()
+  }
 </script>
 
 
-  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad()
-  </script>
 
 
 
 
-
-  </body>
+</body>
 </html>

@@ -1,161 +1,193 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" >
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
 
-<title># 测试2 | 哈库呐玛塔塔📕</title>
-
+<title>哈库呐玛塔塔📕</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://lyjhaha.github.io/favicon.ico?v=1580740019205">
+<!-- mdui -->
+<link rel="stylesheet" href="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/css/mdui.min.css">
+<script src="//cdnjs.loli.net/ajax/libs/mdui/0.4.3/js/mdui.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="shortcut icon" href="https://lyjhaha.github.io/favicon.ico">
 <link rel="stylesheet" href="https://lyjhaha.github.io/styles/main.css">
 
 
+
+
+
   
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css" />
   
 
   
 
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-
-
-    <meta name="description" content="测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2..." />
-    <meta name="keywords" content="" />
-  </head>
-  <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://lyjhaha.github.io">
-        <img src="https://lyjhaha.github.io/images/avatar.png?v=1580740019205" class="site-logo">
-        <h1 class="site-title">哈库呐玛塔塔📕</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
-      </div>
-    </div>
-    <div>
-      
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
-      
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
+ 
+  <meta name="description" content="这是一个小博客">
+</head>
+<body>
+  <div id="app">
+    <div class="mdui-fab-wrapper" mdui-fab="{trigger: 'hover'}">
+  <button class="mdui-fab mdui-ripple mdui-color-indigo">
+    <i class="mdui-icon material-icons">more_horiz</i>
+    <i class="mdui-icon material-icons mdui-fab-opened">more_vert</i>
+  </button>
+  <div class="mdui-fab-dial">
+    <a href="/"  mdui-tooltip="{content: '主页'}"
+      class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red">
+      <i class="mdui-icon material-icons">home</i>
+    </a>
+    <a href="/archives"  mdui-tooltip="{content: '归档页'}"
+      class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue">
+      <i class="mdui-icon material-icons">archive</i>
+    </a>
+    <!-- <a href="/tag"  mdui-tooltip="{content: '标签页'}"
+      class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink">
+      <i class="mdui-icon material-icons">bookmark</i>
+    </a> -->
+    <button onclick="goBack()" mdui-tooltip="{content: '返回'}"
+      class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-purple">
+      <i class="mdui-icon material-icons">arrow_back</i>
+    </button>
   </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      这是一个小博客
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://lyjhaha.github.io/atom.xml" target="_blank">RSS</a>
-    </div>
+</div>
+
+    <div class="mdui-container mdui-m-t-5 mdui-typo">
+      <div class="mdui-row">
+        <div class="mdui-col-md-10">
+          <article class="mdui-card mdui-m-b-5">
+            <header class="mdui-card-media">
+              
+                <img class="article-feature" style="max-height: 300px;">
+               
+              <div class="mdui-card-media-covered">
+                <div class="mdui-card-primary">
+                  <div class="mdui-card-primary-title"># 测试2</div>
+                  <div class="mdui-card-primary-subtitle">
+                    <i class="mdui-icon material-icons">date_range</i> 2020-02-03 / 
+                    <i class="mdui-icon material-icons">watch_later</i> 1 min read /
+                    <i class="mdui-icon material-icons">font_download</i> 250
+                  </div>
+                </div>
+              </div>
+            </header>
+            <div class="mdui-card-content post-content">
+              <p>测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2</p>
+<!-- more   -->
+<p>测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2</p>
+ 
+            </div>
+            
+          </article>
+          <div class="pagination-container mdui-row">
+  <div class="mdui-col-md-6">
+    
+  </div>
+  <div class="mdui-col-md-6 mdui-text-truncate">
+    
+      <a href="https://lyjhaha.github.io/post/la-la-la-la-la-la" class="next mdui-float-right">
+        <p class="mdui-text-truncate mdui-float-left" style="max-width: 200px;">啦啦啦啦啦啦</p>
+        &nbsp;下一篇<i class="mdui-icon material-icons">arrow_forward</i>
+      </a>
+    
   </div>
 </div>
 
 
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title"># 测试2</h2>
-            <div class="post-date">2020-02-03</div>
-            
-            <div class="post-content" v-pre>
-              <p>测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2</p>
-<!-- more   -->
-<p>测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2</p>
 
-            </div>
+          
             
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://lyjhaha.github.io/post/la-la-la-la-la-la">
-                  <h3 class="post-title">
-                    啦啦啦啦啦啦
-                  </h3>
-                </a>
-              </div>
+              <div id="gitalk-container" data-aos="fade-in"></div>
             
 
             
-              
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
+          
+        </div>
 
-              
-            
-
-          </div>
-
+        
+        <div class="mdui-col-md-2 mdui-hidden-sm-down post-toc">
+           
         </div>
       </div>
     </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script type="application/javascript">
+    <div style="height: 100px;"></div> 
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
+<!-- NProgress -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
+<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+<script>
+  NProgress.start()
+  NProgress.inc(0.6)
+</script>
+
+<script type="application/javascript">
 AOS.init();
 
 var app = new Vue({
   el: '#app',
   data: {
     menuVisible: false,
-  },
+  }
 })
-
 </script>
 
+<!-- 一些方法 -->
+<script>
+  // 控制sidebar
+  let inst = new mdui.Drawer('#sidebar')
+  function toggleSidebar() {
+    inst.toggle()
+  }
+  
+  // 返回上一页
+  function goBack() {
+    if (window.history.length > 0) {
+      window.history.back()
+    } else {  // 若无则返回到主页
+      window.location = '/'
+    }
+  }
 
-  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad()
-  </script>
+  // 控制文章目录状态
+  function control_toc() {
+    if (document.querySelector('.post-toc') !== null) {
+      let toc_links = document.querySelector('.post-toc').querySelectorAll('a')
+      toc_links.forEach(ele => {
+        let toc_ele = document.getElementById(decodeURI(ele.href.match(/%.*/g)[0]))
+        let toc_ele_scrollTop = toc_ele.getBoundingClientRect().top
+        if (toc_ele_scrollTop <= 20) {
+          // 清除其它标题的激活状态
+          toc_links.forEach(item => { item.classList.remove('toc-actived') })
+          ele.classList.add('toc-actived')
+        }
+      })
+    }
+  }
+  window.onscroll = () => {
+    control_toc()
+  }
+  window.onload = () => {
+    control_toc()
+    NProgress.done()
+  }
+</script>
+
 
 
 
 
   
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
     <script>
 
       var gitalk = new Gitalk({
@@ -179,5 +211,5 @@ var app = new Vue({
 
 
 
-  </body>
+</body>
 </html>
