@@ -19,12 +19,6 @@
 
 
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css" />
-  
-
-  
-
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -32,7 +26,7 @@
  
   <meta name="description" content="这是一个小博客">
 </head>
-<body>
+<body">
   <div id="app">
     <div class="mdui-fab-wrapper" mdui-fab="{trigger: 'hover'}">
   <button class="mdui-fab mdui-ripple mdui-color-indigo">
@@ -58,67 +52,52 @@
     </button>
   </div>
 </div>
-
+    
     <div class="mdui-container mdui-m-t-5 mdui-typo">
       <div class="mdui-row">
-        <div class="mdui-col-md-10">
-          <article class="mdui-card mdui-m-b-5">
-            <header class="mdui-card-media">
-              
-                <img class="article-feature" style="max-height: 300px;">
-               
-              <div class="mdui-card-media-covered">
-                <div class="mdui-card-primary">
-                  <div class="mdui-card-primary-title"># 测试2</div>
-                  <div class="mdui-card-primary-subtitle">
-                    <i class="mdui-icon material-icons">date_range</i> 2020-02-03 / 
-                    <i class="mdui-icon material-icons">watch_later</i> 1 min read /
-                    <i class="mdui-icon material-icons">font_download</i> 250
-                  </div>
-                </div>
-              </div>
-            </header>
-            <div class="mdui-card-content post-content">
-              <p>测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2</p>
-<!-- more   -->
-<p>测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2</p>
- 
-            </div>
-            
-          </article>
-          <div class="pagination-container mdui-row">
-  <div class="mdui-col-md-6">
-    
-  </div>
-  <div class="mdui-col-md-6 mdui-text-truncate">
-    
-      <a href="https://lyjhaha.github.io/post/la-la-la-la-la-la" class="next mdui-float-right">
-        <p class="mdui-text-truncate mdui-float-left" style="max-width: 200px;">啦啦啦啦啦啦</p>
-        &nbsp;下一篇<i class="mdui-icon material-icons">arrow_forward</i>
-      </a>
-    
-  </div>
-</div>
-
-
-
+        <div class="mdui-col-md-2"></div>
+        <div class="mdui-col-md-8">
           
-            
-              <div id="gitalk-container" data-aos="fade-in"></div>
-            
-
-            
-          
-        </div>
-
-        
-        <div class="mdui-col-md-2 mdui-hidden-sm-down post-toc">
-           
+            <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+  <a href="https://lyjhaha.github.io/post/django-xiang-mu-bu-shu">
+    <div class="mdui-card-media">
+      
+       <img src="https://lyjhaha.github.io/post-images/django-xiang-mu-bu-shu.png " height="240">
+       
+      <div class="mdui-card-media-covered">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">Django项目部署</div>
+          <div class="mdui-card-primary-subtitle">
+            <i class="mdui-icon material-icons">date_range</i> 2020-02-04 
+          </div>
         </div>
       </div>
     </div>
+  </a>
+  <div class="mdui-card-content">
+    <div class="mdui-text-truncate mdui-float-left" style="width: 80%;">
+      使用uswgi+nginx部署Django项目，并开启https访问
 
-    <div style="height: 100px;"></div> 
+    </div>
+    <a href="https://lyjhaha.github.io/post/django-xiang-mu-bu-shu" class="mdui-float-right">阅读全文</a>
+  </div>
+  
+    <div class="mdui-card-actions">
+      
+        <a href="https://lyjhaha.github.io/tag/django" class="mdui-btn mdui-ripple">
+          <i class="mdui-icon material-icons mdui-icon-left">local_offer</i>
+          django
+        </a>
+      
+    </div>
+  
+</article>
+          
+        </div>
+        <div class="mdui-col-md-2"></div>
+      </div>
+    </div>
+    <div style="height: 100px;"></div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
@@ -183,30 +162,6 @@ var app = new Vue({
 </script>
 
 
-
-
-
-  
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
-    <script>
-
-      var gitalk = new Gitalk({
-        clientID: '66529b0598fd48d70f65',
-        clientSecret: '8890d2fce4caab680f9add3b365e29b4cbbfd397',
-        repo: 'lyjhaha.github.io',
-        owner: 'lyjhaha',
-        admin: ['lyjhaha'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false,  // Facebook-like distraction free mode
-        language: 'zh-CN'
-      })
-
-      gitalk.render('gitalk-container')
-
-    </script>
-  
-
-  
 
 
 

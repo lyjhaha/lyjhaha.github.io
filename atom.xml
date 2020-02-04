@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lyjhaha.github.io</id>
     <title>哈库呐玛塔塔📕</title>
-    <updated>2020-02-04T12:45:32.447Z</updated>
+    <updated>2020-02-04T13:04:50.590Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lyjhaha.github.io"/>
     <link rel="self" href="https://lyjhaha.github.io/atom.xml"/>
@@ -11,43 +11,85 @@
     <icon>https://lyjhaha.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 哈库呐玛塔塔📕</rights>
     <entry>
-        <title type="html"><![CDATA[# 测试2]]></title>
-        <id>https://lyjhaha.github.io/post/ce-shi-2</id>
-        <link href="https://lyjhaha.github.io/post/ce-shi-2">
+        <title type="html"><![CDATA[Django项目部署]]></title>
+        <id>https://lyjhaha.github.io/post/django-xiang-mu-bu-shu</id>
+        <link href="https://lyjhaha.github.io/post/django-xiang-mu-bu-shu">
         </link>
-        <updated>2020-02-03T14:26:20.000Z</updated>
-        <summary type="html"><![CDATA[<p>测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2</p>
+        <updated>2020-02-04T12:52:58.000Z</updated>
+        <summary type="html"><![CDATA[<p>使用uswgi+nginx部署Django项目，并开启https访问</p>
 ]]></summary>
-        <content type="html"><![CDATA[<p>测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2</p>
-<!-- more   -->
-<p>测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2测试2</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[啦啦啦啦啦啦]]></title>
-        <id>https://lyjhaha.github.io/post/la-la-la-la-la-la</id>
-        <link href="https://lyjhaha.github.io/post/la-la-la-la-la-la">
-        </link>
-        <updated>2020-02-02T16:13:49.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="标题二">标题二</h2>
-<h3 id="小标题">小标题</h3>
-<h2 id="标题三">标题三</h2>
-<h2 id="标题二-2">标题二</h2>
-<h3 id="小标题-2">小标题</h3>
-<h2 id="标题三-2">标题三</h2>
-<h2 id="标题二-3">标题二</h2>
-<h3 id="小标题-3">小标题</h3>
-<h2 id="标题三-3">标题三</h2>
-<h2 id="标题二-4">标题二</h2>
-<h3 id="小标题-4">小标题</h3>
-<h2 id="标题三-4">标题三</h2>
-<h2 id="标题二-5">标题二</h2>
-<h3 id="小标题-5">小标题</h3>
-<h2 id="标题三-5">标题三</h2>
-<h2 id="标题二-6">标题二</h2>
-<h3 id="小标题-6">小标题</h3>
-<h2 id="标题三-6">标题三</h2>
-<p>啦啦啦啦啦啦啦啦</p>
+        <content type="html"><![CDATA[<p>使用uswgi+nginx部署Django项目，并开启https访问</p>
+<!-- more -->
+<h2 id="uwsgi">uwsgi</h2>
+<ol>
+<li>
+<p>安装：<code>pip install uwsgi</code></p>
+</li>
+<li>
+<p>编写<code>uwsgi.ini</code></p>
+<pre><code class="language-ini">[uwsgi]
+# 使用http访问的端口号，使用这个端口号是直接访问了uwsgi，绕过了nginx
+# http = :9080
+# 与外界连接的端口号，nginx通过这个端口转发给uwsgi
+socket = :9000
+# 是否使用主线程
+master = true
+# 项目在服务器中的目录
+chdir = /root/vguo/django_vguo
+# Django wsgi 位置
+wsgi-file = django_vguo/wsgi.py
+# 最大进程数
+processes = 4
+# 每个进程的线程数
+threads = 2
+# 状态监听端口
+stats = :9001
+# 退出时自动清理环境配置
+vacuum = true
+# 目录下文件改动时自动重启
+touch-reload = /root/vguo/django_vguo
+# Python文件改动时自动重启
+py-auto-reload = 1
+# 后台运行并吧日志存到.log文件
+daemonize = /root/vguo/django_vguo/uwsgi.log
+
+</code></pre>
+<ol start="3">
+<li>启动：<code>uwsgi --ini -d uwsgi.ini</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="nginx">nginx</h2>
+<ol>
+<li>
+<p>编写<code>etc/nginx/conf.d/vguo.conf</code></p>
+<pre><code>upstream django {
+        server 127.0.0.1:9000;
+}
+
+server {
+        listen 443;
+        server_name vguo.lyjcloud.com;
+        ssl on;
+
+        ssl_certificate cert/vguo.lyjcloud.com.pem;
+        ssl_certificate_key cert/vguo.lyjcloud.com.key;
+        ssl_session_timeout 5m;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+
+        location / {
+                uwsgi_pass      django;
+                include         /etc/nginx/uwsgi_params;
+        }
+}
+</code></pre>
+</li>
+<li>
+<p>重启nginx<code>nginx -s reload</code></p>
+</li>
+</ol>
 ]]></content>
     </entry>
 </feed>
